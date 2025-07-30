@@ -1,4 +1,4 @@
-#include <
+#include <iostream>
 
 /*
 main() will handle any changes to the data set that the user requests
@@ -19,7 +19,7 @@ Workflow: i) prompt user to add any movies to the dataset that is not there
 int main(){
 
     // command line prompts
-    cout<< "We"
+    std::cout<< "Welcome to SortFlix ! "<<std::endl;
 
 
 
