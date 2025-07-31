@@ -53,7 +53,7 @@ db.serialize(() => {
           director, cast, description,
           year, link
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-      `);
+      `);   // 100k.csv includes columns for the movie's title, genre IMDB score and RT score, we don't need the other attributes of cast,...
 
       movies.forEach((movie) => {
         stmt.run(movie);
