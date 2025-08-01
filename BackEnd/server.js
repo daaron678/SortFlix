@@ -59,3 +59,8 @@ app.get("/api/movies", (req, res) => { // req is request from client and res is 
     res.json(rows); // send results as JSON file
   });
 });
+
+// start the server
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});  
