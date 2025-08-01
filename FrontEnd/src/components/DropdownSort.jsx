@@ -9,9 +9,10 @@ export default function DropdownSort({ sortBy, setSortBy }) {
         onChange={e => setSortBy(e.target.value)}
         className="w-full border rounded p-1 mt-1"
       >
-        <option value="combined">Combined Score</option>
-        <option value="imdb_score">IMDb Score</option>
-        <option value="year">Release Year</option>
+        <option value="combined">Combined score</option>
+        <option value="imdb_score">IMDb score</option>
+        <option value="rt_score"> Rotten Tomatoes score</option>
+        <option value="year">Release year</option>
       </select>
     </div>
   );
