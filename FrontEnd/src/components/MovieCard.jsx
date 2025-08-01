@@ -1,13 +1,7 @@
 import React from "react";
 
 export default function MovieCard({ movie }) {
-  const genres = (() => {
-    try {
-      return JSON.parse(movie.genre.replace(/'/g, '"'));
-    } catch {
-      return [];
-    }
-  })();
+  const genres = movie.parsedGenre || [];
 
   return (
     <div className="bg-white rounded shadow p-4">
