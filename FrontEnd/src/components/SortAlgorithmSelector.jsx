@@ -3,17 +3,29 @@ import React from "react";
 export default function SortAlgorithmSelector({ algorithm, setAlgorithm }) {
   return (
     <div>
-      <label className="block font-semibold">Sort algorithm:</label>
-      <select
-        value={algorithm}
-        onChange={e => setAlgorithm(e.target.value)}
-        className={`w-full border rounded p-1 mt-1 ${
-          algorithm === "quick" ? "bg-blue-100" : "bg-green-100"
-        }`}
-      >
-        <option value="quick">QuickSort</option>
-        <option value="merge">MergeSort</option>
-      </select>
+      <label className="block font-semibold mb-1">Sorting Algorithm:</label>
+      <div className="space-y-1">
+        <label className="flex items-center space-x-2">
+          <input
+            type="radio"
+            name="algorithm"
+            value="quick"
+            checked={algorithm === "quick"}
+            onChange={() => setAlgorithm("quick")}
+          />
+          <span>Quick Sort</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="radio"
+            name="algorithm"
+            value="merge"
+            checked={algorithm === "merge"}
+            onChange={() => setAlgorithm("merge")}
+          />
+          <span>Merge Sort</span>
+        </label>
+      </div>
     </div>
   );
 }
