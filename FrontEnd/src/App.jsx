@@ -31,6 +31,9 @@ function App() {
   // set page as loading at first
   const [loading, setLoading] = useState(true);
 
+  // set time to test sorting algorithm performance
+  const [sortTime, setSortTime] = useState(null);
+
   // fetch movies once from backend
   useEffect(() => {
     async function fetchData() {
@@ -90,9 +93,21 @@ function App() {
     });
 
     // sort using selected method
-    const sorted = sortAlgorithm === "quick" ? quickSort(filteredData, sortBy) : mergeSort(filteredData, sortBy);
+    let sorted;
+    let time;
+
+    if (sortAlgorithm === "quick") {
+      const result = quickSort(filteredData, sortBy, true);
+      sorted = result.result;
+      time = result.time;
+    } else {
+      const start = performance.now();
+      sorted = mergeSort(filteredData, sortBy);
+      time = performance.now() - start;
+    }
 
     setFiltered(sorted);
+    setSortTime(time.toFixed(2)); // set time in ms, rounded to 2 digits
   }, [movies, filters, sortBy, sortAlgorithm, weights]); // dependencies
 
   // rendering UI using utility classes of Tailwind CSS
