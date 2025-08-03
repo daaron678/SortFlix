@@ -64,9 +64,33 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 - **npm** (comes with Node.js)
 - [Optional] SQLite CLI for inspecting `movies.db`
 
-1. Clone the Repository
+1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/SortFlix.git
 cd SortFlix
+```
 
+2. Set up the Backend
+```bash
+cd BackEnd
+npm install
+```
+(Optional) If you don't have movies.db yet, generate it:
+```bash
+node import.js
+```
+Start the backend server:
+```bash
+node server.js
+```
+And the server will run at: http://localhost:3000 and API endpoint: GET http://localhost:3000/api/movies
+3. Set up the Frontend
+``` bash
+cd ../FrontEnd
+npm install
+npm run dev
+```
+And frontend will run at: http://localhost:5173. Make sure to run both of them at the same time. 
+
+**And that's it, enjoy your movie**
