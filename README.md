@@ -55,3 +55,18 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 │   └── movies.db # SQLite database
 │   └── 100k.csv # CSV dataset from Kaggle
 </code></pre>
+
+# How to Run this website
+
+# Prerequisites
+
+- **Node.js** (v16 or newer recommended)
+- **npm** (comes with Node.js)
+- [Optional] SQLite CLI for inspecting `movies.db`
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/SortFlix.git
+cd SortFlix
+
