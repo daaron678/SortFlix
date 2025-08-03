@@ -67,7 +67,7 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/SortFlix.git
+git clone https://github.com/daaron678/SortFlix.git
 cd SortFlix
 ```
 
