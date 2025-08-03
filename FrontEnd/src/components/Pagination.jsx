@@ -8,7 +8,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         disabled={currentPage === 1}
         className="px-3 py-1 border rounded disabled:opacity-50"
       >
-        Prev
+        Previous
       </button>
       <span className="px-4 py-1">Page {currentPage} of {totalPages}</span>
       <button
