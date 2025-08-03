@@ -24,8 +24,7 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 - **Data:** 100k movie dataset (CSV)
 
 # Project structure
-<pre><code>
-SortFlix/
+<pre><code>SortFlix/
 ├── README.md # Project document
 ├── FrontEnd/
 │   ├── src/
