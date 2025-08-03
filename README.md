@@ -92,6 +92,6 @@ cd ../FrontEnd
 npm install
 npm run dev
 ```
-And frontend will run at: http://localhost:5173. Make sure to run both of them at the same time. 
+And frontend will run at: http://localhost:5173. Make sure to run both of them together. 
 
 **And that's it, enjoy your movie**
