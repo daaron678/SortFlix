@@ -5,6 +5,7 @@ import DropdownSort from "./components/DropdownSort";
 import SortAlgorithmSelector from "./components/SortAlgorithmSelector";
 import ScoreWeightSelector from "./components/ScoreWeightSelector";
 import MovieGrid from "./components/MovieGrid";
+import Pagination from "./components/Pagination";
 import { quickSort, mergeSort } from "./components/sort";
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
 
   // set time to test sorting algorithm performance
   const [sortTime, setSortTime] = useState(null);
+
+  // set movies per page to 20
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 
   // fetch movies once from backend
   useEffect(() => {
@@ -108,7 +113,14 @@ function App() {
 
     setFiltered(sorted);
     setSortTime(time.toFixed(2)); // set time in ms, rounded to 2 digits
+    setCurrentPage(1); // return to first page
   }, [movies, filters, sortBy, sortAlgorithm, weights]); // dependencies
+
+  // paginate data
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentMovies = filtered.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filtered.length / itemsPerPage);
 
   // rendering UI using utility classes of Tailwind CSS
   return (
@@ -122,7 +134,12 @@ function App() {
           <ScoreWeightSelector weights={weights} setWeights={setWeights} />
         </aside>
         <main className="md:w-3/4 p-4">
-          <MovieGrid movies={filtered} loading={loading} />
+          <MovieGrid movies={currentMovies} loading={loading} />
+          <Pagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            onPageChange={setCurrentPage}
+          />
         </main>
       </div>
     </div>
