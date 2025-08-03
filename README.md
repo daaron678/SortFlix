@@ -85,6 +85,7 @@ Start the backend server:
 node server.js
 ```
 And the server will run at: http://localhost:3000 and API endpoint: GET http://localhost:3000/api/movies
+
 3. Set up the Frontend
 ``` bash
 cd ../FrontEnd
