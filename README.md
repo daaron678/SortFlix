@@ -23,22 +23,22 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 - **Backend:** Node.js, Express.js, SQLite
 - **Data:** 100k movie dataset (CSV)
 
-<details> <summary><strong># Project structure</strong></summary>
+# Project structur
 
-SortFlix/
-├── README.md # Project document
-├── FrontEnd/
-│   ├── src/
-│   │   ├── components/                # Reusable UI and logic components
-│   │   │   ├── Header.jsx             # Top navigation/header
-│   │   │   ├── DropdownSort.jsx       # Dropdown to choose sort criteria
-│   │   │   ├── MovieCard.jsx          # Displays individual movie information
-│   │   │   ├── MovieGrid.jsx          # Grid layout for rendering movie cards
-│   │   │   ├── Pagination.jsx         # Handles movie pagination
-│   │   │   ├── ScoreWeightSelector.jsx# UI for selecting critic weight (e.g. IMDB, RT)
-│   │   │   ├── SidebarFilters.jsx     # Sidebar filters: genre, year, runtime
-│   │   │   ├── SortAlgorithmSelector.jsx # Toggle between Merge Sort and Quick Sort
-│   │   │   └── sort.js                # Contains custom implementation of sorting algorithms
+-SortFlix/
+-├── README.md # Project document
+-├── FrontEnd/
+-│   ├── src/
+-│   │   ├── components/                # Reusable UI and logic components
+-│   │   │   ├── Header.jsx             # Top navigation/header
+-│   │   │   ├── DropdownSort.jsx       # Dropdown to choose sort criteria
+-│   │   │   ├── MovieCard.jsx          # Displays individual movie information
+-│   │   │   ├── MovieGrid.jsx          # Grid layout for rendering movie cards
+-│   │   │   ├── Pagination.jsx         # Handles movie pagination
+-│   │   │   ├── ScoreWeightSelector.jsx# UI for selecting critic weight (e.g. IMDB, RT)
+-│   │   │   ├── SidebarFilters.jsx     # Sidebar filters: genre, year, runtime
+-│   │   │   ├── SortAlgorithmSelector.jsx # Toggle between Merge Sort and Quick Sort
+-│   │   │   └── sort.js                # Contains custom implementation of sorting algorithms
 │   |   ├── App.jsx # Root React component
 │   |   ├── App.css # App-level styling
 │   |   ├── index.css # Global styles (e.g. Tailwind base)
