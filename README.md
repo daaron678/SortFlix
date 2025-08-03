@@ -23,7 +23,7 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 - **Backend:** Node.js, Express.js, SQLite
 - **Data:** 100k movie dataset (CSV)
 
-# Project Structure
+<details> <summary><strong># Project structure</strong></summary>
 
 SortFlix/
 ├── README.md # Project document
@@ -55,6 +55,5 @@ SortFlix/
 │   ├── server.js # Express server
 │   └── movies.db # SQLite database
 │   └── 100k.csv # CSV dataset from Kaggle
-
-
+</details>
 
