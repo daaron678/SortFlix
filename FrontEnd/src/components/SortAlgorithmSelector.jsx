@@ -3,7 +3,7 @@ import React from "react";
 export default function SortAlgorithmSelector({ algorithm, setAlgorithm }) {
   return (
     <div>
-      <label className="block font-semibold mb-1">Sorting Algorithm:</label>
+      <label className="block font-semibold mb-1">Sorting algorithm:</label>
       <div className="space-y-1">
         <label className="flex items-center space-x-2">
           <input
@@ -13,7 +13,7 @@ export default function SortAlgorithmSelector({ algorithm, setAlgorithm }) {
             checked={algorithm === "quick"}
             onChange={() => setAlgorithm("quick")}
           />
-          <span>Quick Sort</span>
+          <span>Quick sort</span>
         </label>
         <label className="flex items-center space-x-2">
           <input
@@ -23,7 +23,7 @@ export default function SortAlgorithmSelector({ algorithm, setAlgorithm }) {
             checked={algorithm === "merge"}
             onChange={() => setAlgorithm("merge")}
           />
-          <span>Merge Sort</span>
+          <span>Merge sort</span>
         </label>
       </div>
     </div>
