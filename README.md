@@ -76,10 +76,7 @@ cd SortFlix
 cd BackEnd
 npm install
 ```
-(Optional) If you don't have movies.db yet, generate it:
-```bash
-node import.js
-```
+
 Start the backend server:
 ```bash
 node server.js
