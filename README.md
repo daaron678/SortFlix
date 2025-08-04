@@ -76,6 +76,7 @@ cd SortFlix
 ```
 
 2. Set up the Backend
+   
    a. For the first time only
 ```bash
 cd BackEnd
@@ -92,6 +93,7 @@ Keep open the terminal where the backend server is running. (We need the backend
 frontend server).
 
 3. Open a new terminal with the directory set to your local repo and set up the Frontend
+   
    a. For the first time only
 ``` bash
 cd FrontEnd
