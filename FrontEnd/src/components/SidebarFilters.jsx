@@ -7,7 +7,7 @@ export default function SidebarFilter({ onFilterChange }) {
   const [durationRange, setDurationRange] = useState([60, 240]);
   const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
-
+  // fetch data again to get all the genres
   useEffect(() => {
     fetch("http://localhost:3000/api/movies")
       .then((res) => res.json())
@@ -33,7 +33,7 @@ export default function SidebarFilter({ onFilterChange }) {
         <label className="block font-semibold">Year Range:</label>
         <Slider
           range
-          min={1980}
+          min={1990}
           max={2025}
           defaultValue={yearRange}
           onChange={setYearRange}
