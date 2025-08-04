@@ -82,13 +82,15 @@ Start the backend server:
 node server.js
 ```
 And the server will run at: http://localhost:3000 and API endpoint: GET http://localhost:3000/api/movies
+Keep open the terminal where the backend server is running. (We need the backend server to stay open to run
+frontend server).
 
-3. Set up the Frontend
+3. Open a new terminal with the directory set to your local repo and set up the Frontend
 ``` bash
-cd ../FrontEnd
+cd FrontEnd
 npm install
 npm run dev
 ```
-And frontend will run at: http://localhost:5173. Make sure to run both of them together. 
+And frontend will run at: http://localhost:5173. 
 
 **And that's it, enjoy your movie**
