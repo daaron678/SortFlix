@@ -1,8 +1,6 @@
 // quick sort
-export function quickSort(arr, key, withTiming = false) {
-  const start = performance.now();
-  
-  if (arr.length <= 1) return withTiming ? { result: arr, time: 0 } : arr;
+export function quickSort(arr, key) {
+  if (arr.length <= 1) return arr;
 
   const pivot = arr[arr.length - 1];
   const left = [];
@@ -22,21 +20,10 @@ export function quickSort(arr, key, withTiming = false) {
     }
   }
 
-  const sortedLeft = quickSort(left, key, withTiming);
-  const sortedRight = quickSort(right, key, withTiming);
-  
-  const result = [
-    ...(withTiming ? sortedLeft.result : sortedLeft),
-    pivot,
-    ...(withTiming ? sortedRight.result : sortedRight)
-  ];
+  const sortedLeft = quickSort(left, key);
+  const sortedRight = quickSort(right, key);
 
-  if (withTiming) {
-    const time = performance.now() - start + sortedLeft.time + sortedRight.time;
-    return { result, time };
-  }
-  
-  return result;
+  return [...sortedLeft, pivot, ...sortedRight];
 }
 
 // merge sort
