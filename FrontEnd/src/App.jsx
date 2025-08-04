@@ -102,9 +102,9 @@ function App() {
     let time;
 
     if (sortAlgorithm === "quick") {
-      const result = quickSort(filteredData, sortBy, true);
-      sorted = result.result;
-      time = result.time;
+      const start = performance.now();
+      sorted = quickSort(filteredData, sortBy);
+      time = performance.now() - start;
     } else {
       const start = performance.now();
       sorted = mergeSort(filteredData, sortBy);
