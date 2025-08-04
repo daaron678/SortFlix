@@ -35,9 +35,9 @@ function App() {
   // set time to test sorting algorithm performance
   const [sortTime, setSortTime] = useState(null);
 
-  // set movies per page to 20
+  // set movies per page to 30
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 30;
 
   // fetch movies once from backend
   useEffect(() => {
