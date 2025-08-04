@@ -1,25 +1,45 @@
-// QuickSort implementation
-export function quickSort(arr, key) {
-  if (arr.length <= 1) return arr;
+// quick sort
+export function quickSort(arr, key, withTiming = false) {
+  const start = performance.now();
+  
+  if (arr.length <= 1) return withTiming ? { result: arr, time: 0 } : arr;
 
   const pivot = arr[arr.length - 1];
-  const left = [], right = [];
+  const left = [];
+  const right = [];
 
-  const pivotVal = parseFloat(pivot[key]) || 0;
+  const pivotVal = key === 'combined' ? pivot.combinedScore : parseFloat(pivot[key]);
+  const pivotNum = isNaN(pivotVal) ? -Infinity : pivotVal;
 
   for (let i = 0; i < arr.length - 1; i++) {
-    const currentVal = parseFloat(arr[i][key]) || 0;
-    if (currentVal >= pivotVal) {
+    const currentVal = key === 'combined' ? arr[i].combinedScore : parseFloat(arr[i][key]);
+    const currentNum = isNaN(currentVal) ? -Infinity : currentVal;
+
+    if (currentNum >= pivotNum) {
       left.push(arr[i]);
     } else {
       right.push(arr[i]);
     }
   }
 
-  return [...quickSort(left, key), pivot, ...quickSort(right, key)];
+  const sortedLeft = quickSort(left, key, withTiming);
+  const sortedRight = quickSort(right, key, withTiming);
+  
+  const result = [
+    ...(withTiming ? sortedLeft.result : sortedLeft),
+    pivot,
+    ...(withTiming ? sortedRight.result : sortedRight)
+  ];
+
+  if (withTiming) {
+    const time = performance.now() - start + sortedLeft.time + sortedRight.time;
+    return { result, time };
+  }
+  
+  return result;
 }
 
-// MergeSort implementation
+// merge sort
 export function mergeSort(arr, key) {
   if (arr.length <= 1) return arr;
 
@@ -27,22 +47,24 @@ export function mergeSort(arr, key) {
   const left = mergeSort(arr.slice(0, mid), key);
   const right = mergeSort(arr.slice(mid), key);
 
-  return merge(left, right, key);
+  return merge(left, right, key); 
 }
 
 function merge(left, right, key) {
   const result = [];
 
   while (left.length && right.length) {
-    const leftVal = parseFloat(left[0][key]) || 0;
-    const rightVal = parseFloat(right[0][key]) || 0;
+    const leftVal = key === 'combined' ? left[0].combinedScore : parseFloat(left[0][key]);
+    const rightVal = key === 'combined' ? right[0].combinedScore : parseFloat(right[0][key]);
+    const leftNum = isNaN(leftVal) ? -Infinity : leftVal;
+    const rightNum = isNaN(rightVal) ? -Infinity : rightVal;
 
-    if (leftVal >= rightVal) {
+    if (leftNum >= rightNum) {
       result.push(left.shift());
     } else {
       result.push(right.shift());
     }
   }
 
-  return [...result, ...left, ...right];
+  return [...result, ...left, ...right]; 
 }
