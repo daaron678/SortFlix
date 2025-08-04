@@ -27,6 +27,7 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 <pre><code>SortFlix/
 ├── README.md # Project document
 ├── FrontEnd/
+│   ├── node_modules/ **(Will only be implemented after you run npm install for the first time, it depends on your own OS)**
 │   ├── src/
 │   │   ├── components/                
 │   │   │   ├── Header.jsx # Top navigation/header
@@ -50,9 +51,12 @@ We will apply both sorting algorithms to the same dataset and compare their perf
 │   ├── eslint.config.js # ESLint configuration (optional)
 │   └── package-lock.json # Dependency lock file
 ├── BackEnd/ # Node.js + SQLite backend
+│   ├── node_modules/ **(Will only be implemented after you run npm install for the first time, it depends on your own OS)**   
 │   ├── import.js # Script to import CSV data into SQLite
 │   ├── server.js # Express server
-│   └── movies.db # SQLite database
+│   ├── movies.db # SQLite database
+|   ├── package.json # Package with dependencies
+|   ├── package-lock.json # Dependency lock file
 │   └── 100k.csv # CSV dataset from Kaggle
 </code></pre>
 
