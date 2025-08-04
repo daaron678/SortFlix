@@ -72,13 +72,15 @@ cd SortFlix
 ```
 
 2. Set up the Backend
+   a. For the first time only
 ```bash
 cd BackEnd
 npm install
+node server.js
 ```
-
-Start the backend server:
+  b. Every time starting the server
 ```bash
+cd BackEnd
 node server.js
 ```
 And the server will run at: http://localhost:3000 and API endpoint: GET http://localhost:3000/api/movies
@@ -86,11 +88,19 @@ Keep open the terminal where the backend server is running. (We need the backend
 frontend server).
 
 3. Open a new terminal with the directory set to your local repo and set up the Frontend
+   a. For the first time only
 ``` bash
 cd FrontEnd
 npm install
 npm run dev
 ```
+  b. Every time rendering the UI
+```bash
+cd FrontEnd
+npm run dev
+```
 And frontend will run at: http://localhost:5173. 
+
+Make sure to check whether the package.json has included "cors, express, sqlite3" for backend and "tailwind_css, rc-slider, vite" for frontend.
 
 **And that's it, enjoy your movie**
