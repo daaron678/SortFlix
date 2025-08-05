@@ -136,6 +136,7 @@ function App() {
           <div className="text-sm text-gray-500 mt-2">
               Sort took <span className="font-medium text-black">{sortTime}ms</span>
           </div>
+        )}
         </aside>
         <main className="md:w-3/4 p-4">
           <MovieGrid movies={currentMovies} loading={loading} />
